@@ -12,7 +12,7 @@ export const BookProvider = (props) => {
       .then((response) => {
         setbooks(response.data.docs);
       })
-      .catch((error) => console.log(error));
+      .catch((err) => console.error(err));
   }, []);
 
   return (
