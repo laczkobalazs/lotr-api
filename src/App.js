@@ -1,13 +1,12 @@
-import React, { useContext } from "react";
-import { BookProvider, BookContext } from "./api/BookContext";
+import React from "react";
+import { BookProvider } from "./api/BookContext";
+import BookList from "./components/BookList";
 
 function App() {
-  const book = useContext(BookContext);
-
   return (
     <div className="App">
       <BookProvider>
-        <h1>{book}</h1>
+        <BookList />
       </BookProvider>
     </div>
   );

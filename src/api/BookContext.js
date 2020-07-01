@@ -10,14 +10,12 @@ export const BookProvider = (props) => {
     axios
       .get("https://the-one-api.herokuapp.com/v1/book")
       .then((response) => {
-        setbooks(response.data);
+        setbooks(response.data.docs);
       })
       .catch((error) => console.log(error));
   }, []);
 
   return (
-    <BookContext.Provider value={{ books }}>
-      {props.children}
-    </BookContext.Provider>
+    <BookContext.Provider value={books}>{props.children}</BookContext.Provider>
   );
 };
