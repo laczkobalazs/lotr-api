@@ -5,7 +5,6 @@ const MovieList = () => {
   const movies = useContext(MovieContext);
   let content = "";
   if (movies) {
-    console.log(movies);
     content = movies.map((movie) => {
       return <div key={movie._id}>{movie.name}</div>;
     });

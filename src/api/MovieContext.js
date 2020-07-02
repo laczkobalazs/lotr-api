@@ -4,10 +4,10 @@ import axios from "axios";
 export const MovieContext = createContext();
 
 export const MovieProvider = (props) => {
-  const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState();
 
   const config = {
-    headers: { Authorization: `Bearer REACT_API_KEY` },
+    headers: { Authorization: `Bearer JFpvsjPAUwyKSPkb4PY1` },
   };
 
   useEffect(() => {
@@ -15,7 +15,6 @@ export const MovieProvider = (props) => {
       .get("https://the-one-api.herokuapp.com/v1/movie", config)
       .then((response) => {
         setMovies(response.data.docs);
-        console.log(movies);
       })
       .catch((err) => console.error(err));
   });
