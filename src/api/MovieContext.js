@@ -6,8 +6,11 @@ export const MovieContext = createContext();
 export const MovieProvider = (props) => {
   const [movies, setMovies] = useState();
 
+  const token = process.env.REACT_API_KEY;
+  console.log(process.env);
+
   const config = {
-    headers: { Authorization: `Bearer JFpvsjPAUwyKSPkb4PY1` },
+    headers: { Authorization: `Bearer ${token}` },
   };
 
   useEffect(() => {
