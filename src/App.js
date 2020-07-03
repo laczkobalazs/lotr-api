@@ -5,6 +5,7 @@ import { MovieProvider } from "./api/MovieContext";
 import MovieList from "./components/MovieList";
 import Navbar from "./components/Navbar";
 import { BrowserRouter as Router } from "react-router-dom";
+import { ContentContainer } from "./style/GlobalStyle";
 
 function App() {
   return (
@@ -13,8 +14,10 @@ function App() {
         <BookProvider>
           <MovieProvider>
             <Navbar />
-            <BookList />
-            <MovieList />
+            <ContentContainer>
+              <BookList />
+              <MovieList />
+            </ContentContainer>
           </MovieProvider>
         </BookProvider>
       </Router>
